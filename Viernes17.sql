@@ -1,14 +1,18 @@
-/************************************************
- ** APUNTES DE LA CLASE DE BASE DE DATOS       **
- **  INGENIERIA INFORMATICA.                   **
- **													Febrero 17, 2017   **
- ***********************************************/
+/**************************************************
+ *** APUNTES DE LA CLASE DE BASE DE DATOS       ***
+ ***  INGENIERIA INFORMATICA.                   ***
+ ***													Febrero 17, 2017  ***
+ **************************************************/
+
+/**
+ * CREAR TABLAS EN SQL
+ */
 
 create table PROPIETARIOS 
 	(dni 				char(10)	not null constraint pk_prop primary key,	--se puede poner la primary key en la misma fila
 	 nombre			char(25)	not null,
 	 direccion 	char(30)
-		/*PRIMARY KEY(DNI)*/);----se puede poner la primary key al final de la tabla 
+		/*PRIMARY KEY(DNI)*/);--se puede poner la primary key al final de la tabla 
 
 create table LOCALES
 	(codigo			char(10)	not null,
@@ -19,15 +23,18 @@ create table LOCALES
 
 create table JUGADORES_BALONCESTO
 	(dni				char(10)		not null,
-	 sexo				char(1)			not null	check(sexo in ('M', 'F'),
+	 sexo				char(1)			not null	check(sexo in ('M', 'F')),
 	 fechaInsc	date				not null	default getdate());
 
--- para insertar nuevas fila --
-insert into PROPIETARIOS(dni, NOMBRE, DIRECCION)
+/** 
+ * INSERTAR NUEVAS FILAS
+ */
+
+insert into PROPIETARIOS(dni, nombre, diraccion)
 	values('13234567R', 'sanz Lluis', 'Gran via 26') 
 
 -- tambien se puede escribir --
-insert into locales
+insert into LOCALES
 	values ('13234567R', 'sanz Lluis', 'Gran via 26') 
 
 -- cuando algun valor es nul9 --
@@ -38,7 +45,7 @@ insert into PROPIETARIOS
  * ENCONTRAR LOS LOCALES CON SUPERFICIE MAYOR QUE 200 Y SU PROPIETARIO
  */
 
- select codigo, ubicacion, NOMBRE, DIRECCION --columnas que devuelva
- 	from locales, propietarios -- intervienen
- where Locales.DNI = PROPIETARIOS.DNI and SUPERFICIE > 200
+ select codigo, ubicacion, nombre, direccion --columnas que devuelva
+ 	from LOCALES, PROPIETARIOS -- intervienen
+ where LOCALES.dni = PROPIETARIOS.dni and superficie > 200
 
