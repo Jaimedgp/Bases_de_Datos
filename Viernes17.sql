@@ -4,9 +4,9 @@
  ***													Febrero 17, 2017  ***
  **************************************************/
 
-/**
- * CREAR TABLAS EN SQL
- */
+	/**
+	* CREAR TABLAS EN SQL
+	*/
 
 create table PROPIETARIOS 
 	(dni 				char(10)	not null constraint pk_prop primary key,	--se puede poner la primary key en la misma fila
@@ -26,9 +26,9 @@ create table JUGADORES_BALONCESTO
 	 sexo				char(1)			not null	check(sexo in ('M', 'F')),
 	 fechaInsc	date				not null	default getdate());
 
-/** 
- * INSERTAR NUEVAS FILAS
- */
+	/** 
+	* INSERTAR NUEVAS FILAS
+	*/
 
 insert into PROPIETARIOS(dni, nombre, diraccion)
 	values('13234567R', 'sanz Lluis', 'Gran via 26') 
@@ -37,15 +37,15 @@ insert into PROPIETARIOS(dni, nombre, diraccion)
 insert into LOCALES
 	values ('13234567R', 'sanz Lluis', 'Gran via 26') 
 
--- cuando algun valor es nul9 --
+-- cuando algun valor es nulo --
 insert into PROPIETARIOS
 	values('13234567R', null, 'Gran via 26') 
 
-/*
- * ENCONTRAR LOS LOCALES CON SUPERFICIE MAYOR QUE 200 Y SU PROPIETARIO
- */
+	/*
+	* ENCONTRAR LOS LOCALES CON SUPERFICIE MAYOR QUE 200 Y SU PROPIETARIO
+	*/
 
- select codigo, ubicacion, nombre, direccion --columnas que devuelva
+select codigo, ubicacion, nombre, direccion --columnas que devuelva
  	from LOCALES, PROPIETARIOS -- intervienen
  where LOCALES.dni = PROPIETARIOS.dni and superficie > 200
 
