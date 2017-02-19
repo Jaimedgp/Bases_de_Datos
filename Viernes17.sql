@@ -41,7 +41,7 @@ create table JUGADORES_BALONCESTO
 
 	/** 
 	* INSERTAR NUEVAS FILAS
-	*
+	* hsdkjhfalkshd
 	*       +-----------+------------+-------------+
 	*       | dni       | nombre     | direccion   |
 	*       +-----------+------------+-------------+
