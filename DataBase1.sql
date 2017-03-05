@@ -27,3 +27,4 @@ create table if not exists PROJECTES(
 		graphic char(10), -- check('Linear','Exponential','Logarithmic','Polynomial','Sinusoidal'),
 		data char(10),
 		primary key(data));
+-- esto es solo una prueba --

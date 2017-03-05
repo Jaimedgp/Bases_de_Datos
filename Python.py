@@ -11,3 +11,11 @@ print "\t"+"DATABASES"+"\n"+"################################"+"\n"
 
 for i in  databases:
     print i
+
+DB.execute("use yes")
+tabla = 'create table if not exists algepe(dni char(9));'
+DB.execute(tabla)
+
+DB.execute('show tables;')
+tables = DB.fetchall()
+print tables
