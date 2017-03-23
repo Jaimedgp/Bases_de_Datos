@@ -4,10 +4,28 @@
  *
  * 	Create the Database Maest
  *
+ *          +---------------------------+
+ *          |         MAEST             |
+ *					+---------------------------+
+ *					|    Genero videojuego      |
+ *          |    Factura                |
+ *          |    Compra                 |
+ *          |    Usuario Grupo          |
+ *          |    Amistad                |
+ *          |    Genero                 |
+ *          |    Idioma                 |
+ *          |    Empresa desarrolladora |
+ *          |    medio pago             |
+ *          |    pais                   |
+ *          |    Grupo                  |
+ *          |    usuario                |
+ *          |    idioma voz videojuego  |
+ *          |    idioma text videojuego |
+ *          |    videojuego             |
+ *
  ************************************************/
 
  create database MAEST;
-
 
 	-- 
 	-- Table Genero 
@@ -163,5 +181,39 @@ create table GENEROVIDEOJUEGO (
 );
 
 
+	--
+	-- Table IDIOMA VOZ VIDEOJUEGO
+	--
+create table IDIOMAVOZVIDEOJUEGO (
+	id_idioma char(9), 
+	id_viedojuego char(9),
+	constraint fk_idioma_idioma foreign key(id_idioma) references IDIOMA(id_idioma), -- el constraint pone nombre a la fk para poder utilizarla despues
+	constraint fk_videojuego_videojuego foreign key (id_videojuego) references VIDEOJUEGO(id_videojuego),
+);
 
 
+	--
+	-- Table idioma texto videojuego
+	--
+create table IDIOMATEXTOVIDEOJUEGO (
+	id_idioma char(9),
+	id_videojuego char(9),
+	constraint fk_idioma_idioma foreign key(id_idioma) references IDIOMA(id_idioma), -- el constraint pone nombre a la fk para poder utilizarla despues
+	constraint fk_videojuego_videojuego foreign key (id_videojuego) references VIDEOJUEGO(id_videojuego),
+);
+
+
+	--
+	-- Table VIDEOJUEGO
+	--
+create table VIDEOJUEGO (
+	id_videojuego char(9),
+	titulo char(20),
+	descripcion varchar(200),
+	precio money,
+	fecha_lanzamiento date,
+	edadRecomendado tinyint,
+	id_Desarrollador char(9),
+
+	
+	
