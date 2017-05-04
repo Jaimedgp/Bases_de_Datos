@@ -1,7 +1,7 @@
 /**
  * PRIMERA PRUEBA CON BASES DE DATOS 
  *            EN MYSQL
- *
+ * hola que tal
  */
 
 create database if not exists JGP_PROJECTESES;
