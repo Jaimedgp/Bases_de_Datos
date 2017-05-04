@@ -16,10 +16,10 @@ create table if not exists DATA(
 
 create table if not exists PLOT(
 		types char(10), -- check('Linear','Exponential','Logarithmic','Polynomial','Sinusoidal'),
-		Xaxes char(10)
-		Yaxes char(10)
+		Xaxes char(10),
+		Yaxes char(10),
 		primary key(types),
-		constraint foreign key (Xaxes) references DATA(name));
+		foreign key (Xaxes) references DATA(name));
 
 
 create table if not exists PROJECTES(
